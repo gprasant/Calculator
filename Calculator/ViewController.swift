@@ -29,6 +29,8 @@ class ViewController: UIViewController
     //MARK: - Outlets and Actions
     @IBOutlet weak var display: UILabel!
 
+    @IBOutlet weak var historyLabel: UILabel!
+
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle!
 
@@ -84,6 +86,13 @@ class ViewController: UIViewController
         userIsInTheMiddleOfTypingANumber = false
         operandStack.append(displayValue)
         print("operandStack = \(operandStack)")
+        historyLabel.text = operandStack.description + "\n" + historyLabel.text!
+    }
+
+    @IBAction func clear(sender: UIButton) {
+        displayValue = 0.0
+        operandStack.removeAll()
+        historyLabel.text = ""
     }
 
     //MARK: Helpers for actions
