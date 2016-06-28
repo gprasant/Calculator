@@ -28,12 +28,12 @@ class ViewController: UIViewController
 
     //MARK: - Outlets and Actions
     @IBOutlet weak var display: UILabel!
-
+    @IBOutlet weak var equalsLabel: UILabel!
     @IBOutlet weak var historyLabel: UILabel!
 
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle!
-
+        hideEquals()
         if userIsInTheMiddleOfTypingANumber {
             let displayText = display.text!
             display.text = displayText + digit
@@ -78,8 +78,8 @@ class ViewController: UIViewController
             case "π":
                 performOperation(conjurePi)
             default: break
-
         }
+        showEquals()
     }
 
     @IBAction func enter() {
@@ -96,6 +96,14 @@ class ViewController: UIViewController
     }
 
     //MARK: Helpers for actions
+    private func hideEquals() {
+        equalsLabel.hidden = true
+    }
+
+    private func showEquals() {
+        equalsLabel.hidden = false
+    }
+
     private func performOperation(operation: (Double, Double) -> Double) {
         if (operandStack.count >= 2) {
             displayValue = operation(operandStack.removeLast(), operandStack.removeLast() )
