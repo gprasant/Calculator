@@ -30,6 +30,9 @@
                                                 <state key="normal" title="←">
                                                     <color key="titleColor" red="0.1058823529" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="backSpace:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k8l-fT-nzk"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obf-0Y-Bdn">
                                                 <rect key="frame" x="200" y="0.0" width="200" height="67"/>

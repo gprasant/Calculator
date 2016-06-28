@@ -43,6 +43,11 @@ class ViewController: UIViewController
             userIsInTheMiddleOfTypingANumber = true
         }
     }
+    @IBAction func backSpace(sender: UIButton) {
+        // Get the Display text 
+        // Convert it to a Number 
+        // Remove one digit and set the number 
+    }
 
     @IBAction func appendDot(sender: UIButton) {
         // if displayText has Dot
